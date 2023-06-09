@@ -1,0 +1,14 @@
+@use 'sass:list';
+@import '../functions/getMatchedItems';
+
+@mixin reset_body($tags...) {
+  $all_tags: body;
+
+  $matched_tags: getMatchedItems($all_tags, $tags);
+
+  @if (list.length($matched_tags) > 0) {
+    #{$matched_tags} {
+      line-height: 1;
+    }
+  }
+}

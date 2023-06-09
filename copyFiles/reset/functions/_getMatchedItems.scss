@@ -1,0 +1,13 @@
+@use 'sass:list';
+
+@function getMatchedItems($list, $items, $separator: comma) {
+  $matched: ();
+
+  @each $item in $items {
+    @if list.index($list, $item) {
+      $matched: list.append($matched, $item, $separator);
+    }
+  }
+
+  @return $matched;
+}

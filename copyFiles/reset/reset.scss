@@ -1,0 +1,36 @@
+@use 'sass:list';
+
+@use './mixins/reset-global' as *;
+@use './mixins/reset-html5' as *;
+@use './mixins/reset-body' as *;
+@use './mixins/reset-lists' as *;
+@use './mixins/reset-quotes' as *;
+@use './mixins/reset-table' as *;
+@use './mixins/reset-wildcard' as *;
+@use './mixins/reset-inputs' as *;
+@use './mixins/reset-button' as *;
+@use './mixins/reset-images' as *;
+@use './mixins/reset-anchor' as *;
+
+$reset_tags: '*', html, body, div, span, applet, object, iframe, h1, h2, h3, h4,
+  h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del,
+  dfn, em, img, svg, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt,
+  var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+  details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output,
+  ruby, section, summary, time, mark, audio, video, button, input, textarea,
+  select;
+
+@mixin reset($tags: $reset_tags) {
+  @include reset-global($tags...);
+  @include reset-html5($tags...);
+  @include reset-body($tags...);
+  @include reset-lists($tags...);
+  @include reset-quotes($tags...);
+  @include reset-table($tags...);
+  @include reset-wildcard($tags...);
+  @include reset-inputs($tags...);
+  @include reset-button($tags...);
+  @include reset-images($tags...);
+  @include reset-anchor($tags...);
+}

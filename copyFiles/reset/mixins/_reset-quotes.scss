@@ -1,0 +1,34 @@
+@use 'sass:list';
+@import '../functions/getMatchedItems';
+
+@mixin reset_quotes($tags...) {
+  $all_tags: blockquote, q;
+
+  $matched_tags: getMatchedItems($all_tags, $tags);
+
+  @if (list.length($matched_tags) > 0) {
+    $psuedo_tags: ();
+    #{$matched_tags} {
+      quotes: none;
+    }
+    @each $tag in $matched_tags {
+      $psuedo_tags: list.append(
+        $psuedo_tags,
+        #{$tag + ':before'},
+        $separator: comma
+      );
+      $psuedo_tags: list.append(
+        $psuedo_tags,
+        #{$tag + ':after'},
+        $separator: comma
+      );
+    }
+
+    @if (list.length($psuedo_tags) > 0) {
+      #{$psuedo_tags} {
+        content: '';
+        content: none;
+      }
+    }
+  }
+}

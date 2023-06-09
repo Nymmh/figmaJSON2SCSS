@@ -1,0 +1,22 @@
+@use 'sass:list';
+@import '../functions/getMatchedItems';
+
+@mixin reset_wildcard($tags...) {
+  $all_tags: '*';
+
+  $matched_tags: getMatchedItems($all_tags, $tags);
+
+  @if (list.length($matched_tags) > 0) {
+    *,
+    *:before,
+    *:after {
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      outline: none;
+      position: relative;
+    }
+  }
+}

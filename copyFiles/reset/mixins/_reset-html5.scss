@@ -1,0 +1,15 @@
+@use 'sass:list';
+@import '../functions/getMatchedItems';
+
+@mixin reset_html5($tags...) {
+  $all_tags: article, aside, details, figcaption, figure, footer, header, hgroup,
+    menu, nav, section;
+
+  $matched_tags: getMatchedItems($all_tags, $tags);
+
+  @if (list.length($matched_tags) > 0) {
+    #{$matched_tags} {
+      display: block;
+    }
+  }
+}

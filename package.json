@@ -1,0 +1,21 @@
+{
+  "name": "figmaJSON2SCSS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon dist/run",
+    "run": "node dist/run"
+  },
+  "keywords": [],
+  "author": "Nymh",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.2.5"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "fs-extra": "^11.1.1"
+  }
+}

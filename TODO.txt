@@ -1,0 +1,6 @@
+[x] color
+[x] spacing
+[x] border radius
+[x] border weight
+[x] box shadow
+[] typography

@@ -1,0 +1,16 @@
+@use 'sass:list';
+@import '../functions/getMatchedItems';
+
+@mixin reset_anchor($tags...) {
+  $all_tags: a;
+
+  $matched_tags: getMatchedItems($all_tags, $tags);
+
+  @if (list.length($matched_tags) > 0) {
+    #{$matched_tags} {
+      color: inherit;
+      font: inherit;
+      text-decoration: none;
+    }
+  }
+}

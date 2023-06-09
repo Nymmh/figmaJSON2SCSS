@@ -1,0 +1,20 @@
+@use 'sass:list';
+@import '../functions/getMatchedItems';
+
+@mixin reset_inputs($tags...) {
+  $all_tags: button, input, textarea, select;
+
+  $matched_tags: getMatchedItems($all_tags, $tags);
+
+  @if (list.length($matched_tags) > 0) {
+    #{$matched_tags} {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: 0;
+      margin: 0;
+      overflow-x: hidden;
+      padding: 0;
+    }
+  }
+}
